@@ -1,5 +1,6 @@
 import java.util.List;
 
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
@@ -10,6 +11,7 @@ public class MeuRadioGroup extends JPanel{
 
 	private ButtonGroup grupo = new ButtonGroup();
 	private List<String> opcoes;
+
 	
 	public MeuRadioGroup(List<String> opcoes) {
 		this.opcoes = opcoes;
@@ -17,6 +19,7 @@ public class MeuRadioGroup extends JPanel{
 	}
 
 	private void init() {
+		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		opcoes.forEach(opcao -> {
 			JRadioButton botao = new JRadioButton(opcao);
 			grupo.add(botao);

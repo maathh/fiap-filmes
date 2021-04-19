@@ -8,7 +8,7 @@ public class MeuLabel extends JLabel {
 	
 	private static final long serialVersionUID = 1L;
 	
-	private int size = 26;
+	private int size = 12;
 	private Color cor = new Color(199, 4, 92);
 	
 	public MeuLabel(String texto) {
@@ -23,9 +23,9 @@ public class MeuLabel extends JLabel {
 	}
 	
 	private void init() {
-		this.setHorizontalAlignment(JLabel.CENTER);
+		this.setAlignmentX(JLabel.LEFT_ALIGNMENT);
 		this.setForeground(cor);
-		this.setPreferredSize(new Dimension(100, 100));
+		this.setPreferredSize(new Dimension(150, 25));
 		this.setFont(new Font(null, Font.BOLD, size));
 	}
 	

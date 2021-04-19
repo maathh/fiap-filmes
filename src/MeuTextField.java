@@ -1,5 +1,6 @@
 import java.awt.Dimension;
 
+import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class MeuTextField extends JTextField {
@@ -12,7 +13,8 @@ public class MeuTextField extends JTextField {
 	}
 
 	private void init() {
-		this.setPreferredSize(new Dimension(200,30));
+		this.setAlignmentX(JLabel.LEFT_ALIGNMENT);
+		this.setPreferredSize(new Dimension(150,25));
 		this.setBorder(BordaFactory.criar());
 	}
 
