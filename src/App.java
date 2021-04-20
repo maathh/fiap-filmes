@@ -25,6 +25,7 @@ public class App {
 			JOptionPane.showMessageDialog(null, "Erro ao carregar aparencia");
 		}
 		JFrame frame = new JFrame();
+		BotaoSalvarListener BotaoSalvarListener = new BotaoSalvarListener();
 		
 		JPanel tabCadastro = new JPanel();
 		tabCadastro.setLayout(new FlowLayout());
@@ -51,16 +52,19 @@ public class App {
 		MeuTextField tituloText = new MeuTextField();
 		camposPanel.add(new MeuLabel("Título", Color.BLACK));
 		camposPanel.add(tituloText);
+		BotaoSalvarListener.setTituloField(tituloText);
 		
 		MeuTextField sinopseText = new MeuTextField();
 		camposPanel.add(new MeuLabel("Sinopse", Color.BLACK));
 		camposPanel.add(sinopseText);
+		BotaoSalvarListener.setSinopseField(sinopseText);
 		
 		String[] generos = {"", "Ação", "Suspense"};
 		JComboBox<String> generosComboBox = new JComboBox<String>(generos);
 		generosComboBox.setAlignmentX(Component.LEFT_ALIGNMENT);
 		camposPanel.add(new MeuLabel("Genero", Color.BLACK));
 		camposPanel.add(generosComboBox);
+		BotaoSalvarListener.setGeneroComboBox(generosComboBox);
 		
 		JPanel botoesPanel = new JPanel();
 		botoesPanel.setAlignmentX(Component.LEFT_ALIGNMENT);
@@ -83,16 +87,22 @@ public class App {
 		opcoesPanel.add(new MeuLabel("Onde assistir", Color.BLACK));
 		MeuRadioGroup plataformasRadios = new MeuRadioGroup(List.of("Netflix", "Prime Video", "Pirate Bay"));
 		opcoesPanel.add(plataformasRadios);
+		BotaoSalvarListener.setPlataformasRadioGroup(plataformasRadios);
 		
 		JCheckBox assistidoCheck = new JCheckBox("Assistido");
 		assistidoCheck.setAlignmentX(Component.LEFT_ALIGNMENT);
 		opcoesPanel.add(assistidoCheck);
+		BotaoSalvarListener.setAssistidoJCheck(assistidoCheck);
 		
 		opcoesPanel.add(new MeuLabel("Avaliação", Color.BLACK));
 		StarRater StarRater = new StarRater(5, 0);
 		StarRater.setAlignmentX(Component.LEFT_ALIGNMENT);
 		opcoesPanel.add(StarRater);
+		BotaoSalvarListener.setStarRater(StarRater);
 		//####opcoesPanel####
+		
+		
+		botaoSalvar.addActionListener(BotaoSalvarListener);
 
 		
 		tabCadastro.add(fotoPanel);

@@ -9,7 +9,7 @@ public class MeuRadioGroup extends JPanel{
 
 	private static final long serialVersionUID = 1L;
 
-	private ButtonGroup grupo = new ButtonGroup();
+	public ButtonGroup grupo = new ButtonGroup();
 	private List<String> opcoes;
 
 	
@@ -22,6 +22,7 @@ public class MeuRadioGroup extends JPanel{
 		this.setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		opcoes.forEach(opcao -> {
 			JRadioButton botao = new JRadioButton(opcao);
+			botao.setActionCommand(opcao);
 			grupo.add(botao);
 			this.add(botao);
 		});
